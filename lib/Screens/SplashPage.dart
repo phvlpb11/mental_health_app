@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-// import 'package:mental_health_app/main.dart';
 
 class SplashPage extends StatefulWidget {
   const SplashPage({super.key});
@@ -14,25 +13,32 @@ class _SplashPageState extends State<SplashPage> {
   void initState(){
     super.initState();
     Future.delayed(const Duration(seconds: 2)).then((_) =>
-      Navigator.pushReplacementNamed(context, 'main'));
+      // Navigator.pushReplacementNamed(context, 'auth'));
+      Navigator.pushReplacementNamed(context, 'auth'));
     }
+
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(
+    return Container(
+      color: Colors.white,
+      child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
+        children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: const <Widget>[
+            children: const [
               CircleAvatar(
-                backgroundImage: AssetImage('assets/opening_logo.jpg'),
+                backgroundColor: Color.fromRGBO(255, 126, 29, 1.0),
+                radius: 30.0,
               ),
-              SizedBox(width: 20.0),
-              CircularProgressIndicator(),
-              SizedBox(width: 20.0),
-              Text("Please wait..."),
+              SizedBox(width: 10.0),
+              Text('mySpace',
+                style: TextStyle(
+                  decoration: TextDecoration.none,
+                  fontFamily: 'Lato-Regular',
+                  color: Color.fromRGBO(58, 57, 56, 1.0),
+                ),)
             ],
           ),
         ],
