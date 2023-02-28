@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-// import 'package:flutter/cupertino.dart';
 
 class CustomTabBar extends AnimatedWidget implements PreferredSizeWidget{
   const CustomTabBar({super.key, required this.pageController, required this.pageNames})
@@ -23,7 +22,6 @@ class CustomTabBar extends AnimatedWidget implements PreferredSizeWidget{
       ),
       child: Row(
         mainAxisAlignment:MainAxisAlignment.spaceEvenly,
-
         children: List.generate(pageNames.length, (int index){
           return InkWell
             (child: Text(
@@ -33,7 +31,6 @@ class CustomTabBar extends AnimatedWidget implements PreferredSizeWidget{
                 color: Colors.white.withOpacity(
                     index==pageController.page ? 1.0:0.6),
                 fontWeight:FontWeight.bold,
-
               )
           ),
               onTap: (){
